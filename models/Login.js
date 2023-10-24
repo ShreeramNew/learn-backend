@@ -10,5 +10,5 @@ const loginSchema=new mongoose.Schema({
         required:true
     }
 })
-
+//Jai SHREERAM
 module.exports=mongoose.model('Login',loginSchema);
