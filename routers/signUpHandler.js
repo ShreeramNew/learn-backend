@@ -10,7 +10,7 @@ const ValidateInputs = [body("email").isEmail().withMessage("Not a Valid email")
 router.post("/", ValidateInputs, async (req, res) => {
    const errors = validationResult(req);
    if (!errors.isEmpty()) {
-      return res.send(errors); //Return if Validation conditions are not satisified
+      return res.status(400).send(errors); //Return if Validation conditions are not satisified
    }
    const userData = req.body;
    try {
@@ -21,12 +21,16 @@ router.post("/", ValidateInputs, async (req, res) => {
             email: userData.email,
             password: userData.password,
          });
-         res.send("Account Created");
+         res.status(201).json({
+            "response":"Account Created!"
+         });
       } else {
-         res.send("Account already present!");
+         res.status(403).json({
+            "response":"Account exists already!"
+         });
       }
    } catch (err) {
-      res.send(err);
+      res.status(500).send(err);
    }
 });
 
