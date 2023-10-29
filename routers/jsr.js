@@ -33,8 +33,7 @@ router.get("/", async (req, res) => {
       let logins = await login.find({
          password: { $eq: "Jai Hanuman" },
       });
-
-      logins = res.json(logins);
+      res.json(logins);
    } catch (err) {
       res.send(err);
    }
