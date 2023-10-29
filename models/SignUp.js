@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const loginSchema=new mongoose.Schema({
+const SignUpSchema=new mongoose.Schema({
     email:{
         type:String,
         required:true,
@@ -11,4 +11,4 @@ const loginSchema=new mongoose.Schema({
     }
 })
 //Jai SHREERAM
-module.exports=mongoose.model('Login',loginSchema);
+module.exports=mongoose.model('SignUp',SignUpSchema);

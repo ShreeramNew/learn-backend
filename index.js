@@ -7,7 +7,7 @@ const cors = require('cors');
 
 app.use(express.json())
 app.use(cors());
-app.use("/jsr",require('./Routers/Jsr'));
+app.use("/SignUp",require('./routers/signUpHandler'));
 app.use("/names",require('./routers/fetchName'));
 
 app.listen(port, () => {
