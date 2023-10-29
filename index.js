@@ -3,8 +3,10 @@ connectToMongo()
 const express = require('express')
 const app = express()
 const port = 3000
+const cors = require('cors');
 
 app.use(express.json())
+app.use(cors());
 app.use("/jsr",require('./Routers/Jsr'));
 app.use("/names",require('./routers/fetchName'));
 
