@@ -22,11 +22,11 @@ router.post("/", ValidateInputs, async (req, res) => {
             password: userData.password,
          });
          res.status(201).json({
-            "response":"Account Created!"
+            response: "Account Created!",
          });
       } else {
          res.status(403).json({
-            "response":"Account exists already!"
+            response: "Account exists already!",
          });
       }
    } catch (err) {
